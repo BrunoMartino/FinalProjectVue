@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-[url('./ranek-assets/pattern.svg')] bg-repeat bg-top;
+}
+
+.btn {
+  @apply block py-3 px-6 bg-[#87f] rounded-sm text-white text-center shadow-sm border-none font-sans cursor-pointer hover:bg-[#65d] hover:scale-110;
+}
+#app {
+  @apply flex flex-col min-h-screen;
+}
+main {
+  @apply flex-1;
+}
