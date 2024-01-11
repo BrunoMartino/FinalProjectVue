@@ -15,3 +15,12 @@ body {
 main {
   @apply flex-1;
 }
+.product__wrapper {
+  @apply mb-4 bg-white shadow-md rounded-md border-2 border-gray-100 mx-5 py-3 px-5;
+}
+.product__price {
+  @apply font-semibold text-[#87f] text-lg;
+}
+.product__title {
+  @apply font-bold text-2xl my-4;
+}

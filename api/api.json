@@ -1,0 +1,43 @@
+{
+  "user": [
+    {
+      "id": "bruno_g_martins@outlook.com",
+      "name": "Bruno Galvão",
+      "password": "123",
+      "street": "Rua Ali Perto",
+      "cep": "12345-678",
+      "number": "25",
+      "state": "MG",
+      "city": "Belo-Horizonte"
+    }
+  ],
+  "product": [
+    {
+      "id": "notebook",
+      "name": "Notebook",
+      "user_id": "bruno_g_martins@outlook.com",
+      "price": "4999",
+      "sold": "false",
+      "description": "Esse é um novo notebook",
+      "imgs": null
+    },
+    {
+      "id": "smartphone",
+      "name": "Smartphone",
+      "user_id": "bruno_g_martins@outlook.com",
+      "price": "1999",
+      "sold": "false",
+      "description": "Esse é um novo smartphone.",
+      "imgs": null
+    },
+    {
+      "id": "tablet",
+      "name": "Tablet",
+      "user_id": "bruno_g_martins@outlook.com",
+      "price": "1399",
+      "sold": "false",
+      "description": "Esse é um novo tablet.",
+      "imgs": null
+    }
+  ]
+}
