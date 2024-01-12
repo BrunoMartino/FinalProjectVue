@@ -10,17 +10,34 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { api } from '@/services.js'
+import { ref, onMounted, computed, watch } from 'vue'
+import { useRoute } from 'vue-router'
+import { serializeData } from '@/helpers.js'
 const products = ref('')
+const route = useRoute()
+
+const url = computed(() => {
+  const query = serializeData(route.query)
+
+  return `/product?_limit=10${query}`
+})
 
 const getProducts = () => {
-  fetch('http://localhost:3000/product')
-    .then((r) => r.json())
-    .then((r) => {
-      products.value = r
-    })
+  api.get(url.value).then((r) => {
+    console.log(r)
+    products.value = r.data // usar o data para acessar as propriedades
+  })
 }
+
 onMounted(() => {
   getProducts()
 })
+
+watch(
+  () => url.value,
+  () => {
+    getProducts()
+  }
+)
 </script>

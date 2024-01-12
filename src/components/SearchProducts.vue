@@ -1,11 +1,23 @@
 <template>
-  <div>
-    <input type="text" />
-  </div>
+  <form>
+    <input type="text" name="search" id="search" v-model="search" />
+    <input type="submit" value="search" id="magnifier" @click.prevent="searchProducts" />
+  </form>
 </template>
 
-<script>
-export default {}
+<script setup>
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+
+//useRouter altera direto na Url
+//useRoute puxa propriedades presentes na Url
+
+const search = ref('')
+const router = useRouter()
+
+const searchProducts = () => {
+  router.push({ query: { q: search.value } })
+}
 </script>
 
 <style></style>
