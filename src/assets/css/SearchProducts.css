@@ -1,0 +1,9 @@
+.searchbar {
+  @apply max-w-[440px] md:max-w-[600px] my-8 mx-auto container relative;
+}
+#search {
+  @apply w-full shadow-md py-5 px-5 border-2 border-transparent rounded-md scale-100 transition-all md:hover:scale-105 hover:shadow-xl hover:border-[#87f] md:focus:scale-110 focus:shadow-xl;
+}
+#magnifier {
+  @apply w-[62px] h-[62px] cursor-pointer bg-[url('../ranek-assets/search.svg')] bg-no-repeat bg-center -indent-40 border-0 absolute top-0 right-0 transition-none shadow-none hover:scale-110 hover:outline-none focus:outline-none hover:shadow-none focus:shadow-none hover:border-0 focus:border-0 hover:border-transparent focus:border-transparent;
+}

@@ -1,0 +1,19 @@
+.product__wrapper {
+  @apply md:grid md:grid-cols-3 gap-8 container px-8;
+}
+.product {
+  @apply mb-4 bg-white shadow-md rounded-md border-2 border-gray-100 mx-5 py-3
+    px-5 transition-all relative z-10 hover:shadow-xl hover:scale-110;
+}
+.product img {
+  @apply rounded-sm mb-5;
+}
+.product__price {
+  @apply font-semibold text-[#e80] text-lg;
+}
+.product__title {
+  @apply font-bold text-2xl mb-5;
+}
+.product__not-found {
+  @apply text-center text-2xl font-bold;
+}

@@ -1,3 +1,8 @@
+/* product list on home page styles*/
+@import './css/ProductList.css';
+/*styles for searchbar*/
+@import './css/SearchProducts.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,7 +12,7 @@ body {
 }
 
 .btn {
-  @apply block py-3 px-6 bg-[#87f] rounded-sm text-white text-center shadow-sm border-none font-sans cursor-pointer hover:bg-[#65d] hover:scale-110;
+  @apply block py-3 px-6 bg-[#87f] rounded-sm text-white text-center shadow-sm scale-90 border-none font-sans cursor-pointer hover:bg-[#65d] hover:scale-100;
 }
 #app {
   @apply flex flex-col min-h-screen;
@@ -15,12 +20,8 @@ body {
 main {
   @apply flex-1;
 }
-.product__wrapper {
-  @apply mb-4 bg-white shadow-md rounded-md border-2 border-gray-100 mx-5 py-3 px-5;
-}
-.product__price {
-  @apply font-semibold text-[#87f] text-lg;
-}
-.product__title {
-  @apply font-bold text-2xl my-4;
+
+input,
+textarea {
+  @apply rounded-sm border-2 border-white py-4 px-4 shadow-md transition-all text-lg mb-4 hover:outline-none focus:outline-none hover:shadow-xl focus:shadow-xl hover:border-2 focus:border-2 hover:border-[#87f] focus:border-[#87f];
 }

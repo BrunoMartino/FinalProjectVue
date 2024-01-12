@@ -1,6 +1,12 @@
 <template>
-  <form>
-    <input type="text" name="search" id="search" v-model="search" />
+  <form class="searchbar">
+    <input
+      type="text"
+      name="search"
+      id="search"
+      v-model="search"
+      placeholder="Busque um produto..."
+    />
     <input type="submit" value="search" id="magnifier" @click.prevent="searchProducts" />
   </form>
 </template>
