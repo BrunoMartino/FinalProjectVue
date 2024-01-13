@@ -1,6 +1,6 @@
 <template>
   <ul v-if="totalPages > 1" class="page__list">
-    <li v-for="page in totalPages" :key="page" class="page">
+    <li v-for="page in pagesRange" :key="page" class="page">
       <router-link :to="{ query: query(page) }" :class="{ active: isActive(page) }">{{
         page
       }}</router-link>
@@ -22,6 +22,23 @@ const props = defineProps({
     type: Number,
     default: 1
   }
+})
+
+const pagesRange = computed(() => {
+  const currentPage = Number(route.query._page)
+  const range = 9
+  const offset = Math.ceil(range / 2)
+  const total = totalPages.value // sempre chame value ao usar uma propertie
+  const pagesArray = []
+
+  for (let i = 1; i <= total; i++) {
+    pagesArray.push(i)
+  }
+
+  pagesArray.splice(0, currentPage - offset)
+  pagesArray.splice(range, total)
+
+  return pagesArray
 })
 
 const totalPages = computed(() => {
