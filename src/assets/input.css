@@ -2,6 +2,8 @@
 @import './css/ProductList.css';
 /*styles for searchbar*/
 @import './css/SearchProducts.css';
+/*styles for pagination on home page*/
+@import './css/PaginationProducts.css';
 
 @tailwind base;
 @tailwind components;

@@ -1,0 +1,14 @@
+.page__list {
+  @apply col-span-1 flex my-6 px-8;
+}
+.page {
+  @apply inline-block;
+}
+.page a {
+  @apply py-1 px-2 rounded-sm my-1 mx-1 font-semibold;
+}
+
+.page a.active,
+.page a:hover {
+  @apply bg-[#87f] text-white;
+}
