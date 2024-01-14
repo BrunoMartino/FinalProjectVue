@@ -9,6 +9,16 @@
       "number": "25",
       "state": "MG",
       "city": "Belo-Horizonte"
+    },
+    {
+      "id": "andre@origamid.com",
+      "name": "André Rafael",
+      "password": "123",
+      "street": "Rua Ali Perto",
+      "cep": "12345-678",
+      "number": "25",
+      "state": "MG",
+      "city": "Belo-Horizonte"
     }
   ],
   "product": [

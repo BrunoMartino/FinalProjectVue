@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import TheHome from '@/views/TheHome.vue'
 import TheProduct from '@/views/TheProduct.vue'
 import TheLogin from '@/views/TheLogin.vue'
+import TheUser from '@/views/user-pages/TheUser.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -21,6 +22,11 @@ const router = createRouter({
       path: '/login',
       name: 'login',
       component: TheLogin
+    },
+    {
+      path: '/user',
+      name: 'user',
+      component: TheUser
     }
   ],
   scrollBehavior() {

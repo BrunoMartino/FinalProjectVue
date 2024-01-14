@@ -13,6 +13,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.test {
+  @apply bg-black text-white text-4xl;
+}
+
 body {
   @apply bg-[url('./ranek-assets/pattern.svg')] bg-repeat bg-top;
 }
