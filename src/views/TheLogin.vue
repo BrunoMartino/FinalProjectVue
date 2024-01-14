@@ -11,8 +11,8 @@
     <p class="forgot__password">
       <a href="/" target="_blank">Esqueceu sua senha? Clique aqui</a>
     </p>
-    <RegisterUser />
   </section>
+  <RegisterUser />
 </template>
 
 <script setup>

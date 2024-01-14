@@ -8,6 +8,10 @@
 @import './css/TheProduct.css';
 /*sytles for login-page*/
 @import './css/TheLogin.css';
+/*sytles for register-section*/
+@import './css/RegisterUser.css';
+/*sytles for user forms*/
+@import './css/UserForm.css';
 
 @tailwind base;
 @tailwind components;

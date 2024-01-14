@@ -1,7 +1,16 @@
 <template>
-  <h1>Registre-se</h1>
+  <section class="register">
+    <h2>Crie sua conta!</h2>
+    <button v-if="!create" class="btn" @click="create = true">Criar Conta</button>
+    <UserForm v-else>
+      <button class="btn">Criar Usuário</button>
+    </UserForm>
+  </section>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref } from 'vue'
+import UserForm from './UserForm.vue'
 
-<style></style>
+let create = ref(false)
+</script>

@@ -1,0 +1,11 @@
+.register {
+  @apply container mx-auto px-8 max-w-lg;
+}
+
+.register h2 {
+  @apply text-center text-xl mt-10 mb-4 text-[#87f] font-semibold;
+}
+
+.register .btn {
+  @apply w-full max-w-[300px] mx-auto;
+}

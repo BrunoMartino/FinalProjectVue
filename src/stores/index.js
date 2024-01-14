@@ -2,6 +2,7 @@ import Vuex from 'vuex'
 import { api } from '@/services.js'
 
 export default new Vuex.Store({
+  strict: true,
   state: {
     login: false,
     user: {
@@ -21,7 +22,7 @@ export default new Vuex.Store({
       state.login = payload
     },
     UPDATE_USER(state, payload) {
-      state.user = payload
+      state.user = Object.assign(state.user, payload)
     }
   },
   actions: {
