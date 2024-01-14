@@ -1,0 +1,15 @@
+.product__container {
+  @apply container mx-auto px-8 grid grid-cols-2 gap-8 py-16;
+}
+.product__price {
+  @apply mb-10 font-semibold text-[#e80] text-2xl;
+}
+.product__title {
+  @apply font-bold text-2xl mb-5;
+}
+.product__description {
+  @apply text-xl;
+}
+.buy-btn {
+  @apply mt-16 w-[200px];
+}

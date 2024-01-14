@@ -4,6 +4,8 @@
 @import './css/SearchProducts.css';
 /*styles for pagination on home page*/
 @import './css/PaginationProducts.css';
+/*styles for product-page*/
+@import './css/TheProduct.css';
 
 @tailwind base;
 @tailwind components;
@@ -26,4 +28,20 @@ main {
 input,
 textarea {
   @apply rounded-sm border-2 border-white py-4 px-4 shadow-md transition-all text-lg mb-4 hover:outline-none focus:outline-none hover:shadow-xl focus:shadow-xl hover:border-2 focus:border-2 hover:border-[#87f] focus:border-[#87f];
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.5s;
+}
+.fade-enter,
+.fade-leave-to {
+  @apply opacity-0;
+}
+
+.fade-enter {
+  transform: translate3d(0, -20px, 0);
+}
+.fade-leave-to {
+  transform: translate3d(0, 20px 0);
 }

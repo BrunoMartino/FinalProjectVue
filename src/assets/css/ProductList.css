@@ -8,10 +8,10 @@
 .product img {
   @apply rounded-sm mb-5;
 }
-.product__price {
-  @apply font-semibold text-[#e80] text-lg;
+.products__price {
+  @apply font-semibold text-[#e80] text-2xl;
 }
-.product__title {
+.products__title {
   @apply font-bold text-2xl mb-5;
 }
 .product__not-found {
