@@ -6,6 +6,8 @@
 @import './css/PaginationProducts.css';
 /*styles for product-page*/
 @import './css/TheProduct.css';
+/*sytles for login-page*/
+@import './css/TheLogin.css';
 
 @tailwind base;
 @tailwind components;
@@ -23,6 +25,9 @@ body {
 }
 main {
   @apply flex-1;
+}
+label {
+  @apply mb-2;
 }
 
 input,

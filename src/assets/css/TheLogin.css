@@ -1,0 +1,22 @@
+.login {
+  @apply container mx-auto px-8 max-w-lg;
+}
+
+.login h1 {
+  @apply text-center text-3xl mt-10 text-[#87f] font-semibold;
+}
+
+.login form {
+  @apply grid;
+}
+.login label {
+  @apply text-sm uppercase font-bold;
+}
+
+.btn-login {
+  @apply w-full max-w-[300px] mx-auto;
+}
+
+.forgot__password {
+  @apply text-center mt-5 mx-auto hover:text-[#87f] hover:underline-offset-2;
+}
