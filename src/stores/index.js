@@ -1,9 +1,10 @@
-import Vuex from 'vuex'
+// stores/index.js
+
+import { defineStore } from 'pinia'
 import { api } from '@/services.js'
 
-export default new Vuex.Store({
-  strict: true,
-  state: {
+export const useStore = defineStore('user', {
+  state: () => ({
     login: false,
     user: {
       id: '',
@@ -13,23 +14,23 @@ export default new Vuex.Store({
       cep: '',
       street: '',
       number: '',
+      neighborhood: '',
       city: '',
       state: ''
     }
-  },
-  mutations: {
-    UPDATE_LOGIN(state, payload) {
-      state.login = payload
-    },
-    UPDATE_USER(state, payload) {
-      state.user = Object.assign(state.user, payload)
-    }
-  },
+  }),
   actions: {
-    getUser(context, payload) {
-      api.get(`/user/${payload}`).then((response) => {
-        context.commit('UPDATE_USER', response.data)
-        context.commit('UPDATE_LOGIN', true)
+    updateLogin: function (payload) {
+      this.login = payload
+    },
+    updateUser: function (payload) {
+      Object.assign(this.user, payload)
+    },
+
+    getUser: function (payload) {
+      return api.get(`/user/${payload}`).then((response) => {
+        this.updateUser(response.data)
+        this.updateLogin(true)
       })
     }
   }

@@ -17,19 +17,21 @@
 
 <script setup>
 import RegisterUser from '@/components/RegisterUser.vue'
+import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { useStore } from 'vuex'
+import { useStore } from '@/stores/index.js'
 
 const store = useStore()
 const router = useRouter()
 
-const login = {
+const login = ref({
   email: '',
-  senha: ''
-}
+  password: ''
+})
 
 const signIn = () => {
-  store.dispatch('getUser', login.email)
+  store.getUser(login.value.email)
   router.push({ name: 'user' })
+  console.log(store.user)
 }
 </script>

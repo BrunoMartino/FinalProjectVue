@@ -18,10 +18,42 @@
     <input type="text" name="city" id="city" v-model="city" />
     <label for="state">Estado:</label>
     <input type="text" name="state" id="state" v-model="state" />
-    <div class="btn__create-user">
+    <div class="btn__create-user" @click.prevent="userView">
       <slot></slot>
     </div>
   </form>
 </template>
 
-<script setup></script>
+<script setup>
+import { computed, ref } from 'vue'
+import { useStore } from '@/stores/index.js'
+
+const store = useStore()
+
+const name = ref('')
+const email = ref('')
+const password = ref('')
+const cep = ref('')
+const street = ref('')
+const number = ref('')
+const neighborhood = ref('')
+const city = ref('')
+const state = ref('')
+
+const user = computed(() => ({
+  name: name.value,
+  email: email.value,
+  password: password.value,
+  cep: cep.value,
+  street: street.value,
+  number: number.value,
+  neighborhood: neighborhood.value,
+  city: city.value,
+  state: state.value
+}))
+
+const userView = () => {
+  store.updateUser(user.value)
+  console.log(store.user)
+}
+</script>
