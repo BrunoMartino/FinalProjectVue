@@ -19,6 +19,18 @@
       "number": "25",
       "state": "MG",
       "city": "Belo-Horizonte"
+    },
+    {
+      "name": "Gattus",
+      "email": "gattus@patatinhacurta.com",
+      "password": "123",
+      "cep": "31170370",
+      "street": "Rua João das Chagas",
+      "number": 333,
+      "neighborhood": "União",
+      "city": "Belo Horizonte",
+      "state": "MG",
+      "id": "gattus@patatinhacurta.com"
     }
   ],
   "product": [
