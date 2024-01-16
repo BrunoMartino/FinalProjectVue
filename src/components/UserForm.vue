@@ -69,18 +69,21 @@ const fillCEP = () => {
   }
 }
 
-const enterUserPage = (email) => {
-  store.getUser(email)
-  router.push({ name: 'user' })
-}
-
 const registerUser = async () => {
   try {
     await store.createUser(user.value)
+    console.log('User creation successful')
+
     await store.updateUser(user.value)
-    await enterUserPage(user.value.email) // await precisa ser passado em todos os passos da funcção que precisam outro passo terminar para entar executar, e não apenas nos passos anteriores
+    console.log('User update successful')
+
+    await store.getUser(user.value.email)
+    console.log('User get succesful')
+
+    await router.push({ name: 'user' })
+    console.log('Enter user page succesful')
   } catch (error) {
-    console.log(error)
+    console.error('Error during user registration:', error)
   }
 }
 </script>

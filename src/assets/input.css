@@ -12,6 +12,8 @@
 @import './css/RegisterUser.css';
 /*sytles for user forms*/
 @import './css/UserForm.css';
+/*sytles for user page*/
+@import './css/TheUser.css';
 
 @tailwind base;
 @tailwind components;

@@ -1,0 +1,25 @@
+.user {
+  display: grid;
+  grid-template-columns: minmax(140px, 200px) 1fr;
+  @apply max-w-4xl my-10 mx-auto container gap-8 py-5 px-5;
+}
+
+@media (max-width: 496px) {
+  .user {
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+  }
+}
+
+.sidenav a,
+.sidenav button {
+  @apply py-3 px-3 block bg-[#f4f7fc] mb-2 rounded-sm;
+}
+.sidenav a.router-link-exact-active,
+.sidenav a:hover,
+.sidenav button:hover {
+  @apply bg-[#87f] text-white;
+}
+.sidenav button {
+  @apply border-none w-full text-left cursor-pointer;
+}

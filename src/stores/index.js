@@ -34,6 +34,23 @@ export const useStore = defineStore('user', {
     },
     createUser: function (payload) {
       api.post('/user', payload)
+    },
+    logoutUser: function () {
+      this.updateUser({
+        user: {
+          id: '',
+          name: '',
+          email: '',
+          password: '',
+          cep: '',
+          street: '',
+          number: '',
+          neighborhood: '',
+          city: '',
+          state: ''
+        }
+      })
+      this.updateLogin(false)
     }
   }
 })
