@@ -17,9 +17,21 @@ export const useStore = defineStore('user', {
       neighborhood: '',
       city: '',
       state: ''
-    }
+    },
+    userProducts: null
   }),
   actions: {
+    updateUserProducts: function (payload) {
+      this.userProducts = payload // context sempre é acessado com -this-
+    },
+    addUserProducts: function (payload) {
+      this.userProducts.unshift(payload)
+    },
+    getUserProducts: function () {
+      return api.get(`/product?user_id=${this.user.id}`).then((r) => {
+        this.updateUserProducts(r.data)
+      })
+    },
     updateLogin: function (payload) {
       this.login = payload // pode alterar estado dos objetos na store direto com actions.
     },
@@ -30,25 +42,25 @@ export const useStore = defineStore('user', {
       return api.get(`/user/${payload}`).then((response) => {
         this.updateUser(response.data)
         this.updateLogin(true)
+        this.getUserProducts()
       })
     },
+
     createUser: function (payload) {
       api.post('/user', payload)
     },
     logoutUser: function () {
       this.updateUser({
-        user: {
-          id: '',
-          name: '',
-          email: '',
-          password: '',
-          cep: '',
-          street: '',
-          number: '',
-          neighborhood: '',
-          city: '',
-          state: ''
-        }
+        id: '',
+        name: '',
+        email: '',
+        password: '',
+        cep: '',
+        street: '',
+        number: '',
+        neighborhood: '',
+        city: '',
+        state: ''
       })
       this.updateLogin(false)
     }

@@ -32,6 +32,5 @@ const login = ref({
 const signIn = () => {
   store.getUser(login.value.email)
   router.push({ name: 'user' })
-  console.log(store.user)
 }
 </script>
