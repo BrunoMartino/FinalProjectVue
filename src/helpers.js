@@ -10,12 +10,16 @@ export function serializeData(obj) {
 }
 
 export function toCurrency(value) {
-  value = Number(value)
-  if (!isNaN(value)) {
-    return value.toLocaleString('pt-BR', {
-      style: 'currency',
-      currency: 'BRL'
-    })
+  if (typeof value === 'string' && value.trim()) {
+    try {
+      const floatValue = parseFloat(value.replace(',', '.'))
+      return floatValue.toLocaleString('pt-BR', {
+        style: 'currency',
+        currency: 'BRL'
+      })
+    } catch (error) {
+      return value
+    }
   } else {
     return ''
   }
