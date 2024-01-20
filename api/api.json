@@ -1356,6 +1356,22 @@
       "sold": "false",
       "description": "Esse é um novo tablet.",
       "imgs": null
+    },
+    {
+      "name": "Tablet",
+      "price": "254",
+      "description": "Esse é um tablet do gattinho",
+      "imgs": null,
+      "user_id": "gattus@patatinhacurta.com",
+      "id": "bClATvV"
+    },
+    {
+      "name": "Tablet",
+      "price": "2540",
+      "description": "oto tablet",
+      "imgs": null,
+      "user_id": "gattus@patatinhacurta.com",
+      "id": "wK41sWD"
     }
   ]
 }

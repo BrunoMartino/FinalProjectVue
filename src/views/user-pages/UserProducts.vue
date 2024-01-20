@@ -1,11 +1,13 @@
 <template>
   <section>
-    <h2>Adicionar Produto</h2>
+    <h2 class="mb-5">Adicionar Produto</h2>
     <AddProducts />
-    <h2>Seus Produtos</h2>
+    <h2 class="mb-5">Seus Produtos</h2>
     <ul v-if="userProducts" class="user-products__list">
       <li v-for="(product, index) in userProducts" :key="index">
-        <p>{{ product.description }}</p>
+        <ProductItem :product="product">
+          <p>{{ product.description }}</p>
+        </ProductItem>
       </li>
     </ul>
   </section>
@@ -13,6 +15,7 @@
 
 <script setup>
 import AddProducts from '@/components/AddProducts.vue'
+import ProductItem from '@/components/ProductItem.vue'
 
 import { ref, onMounted, watch, computed } from 'vue'
 import { useStore } from '@/stores/index.js'

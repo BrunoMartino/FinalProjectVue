@@ -14,6 +14,10 @@
 @import './css/UserForm.css';
 /*sytles for user page*/
 @import './css/TheUser.css';
+/*styles for product item*/
+@import './css/ProductItem.css';
+/*styles for Add Products*/
+@import './css/AddProducts.css';
 
 @tailwind base;
 @tailwind components;

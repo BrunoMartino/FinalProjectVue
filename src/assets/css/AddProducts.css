@@ -1,0 +1,9 @@
+.add-product {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  @apply items-center mb-16;
+}
+
+.add-products__btn {
+  grid-column: 2;
+}

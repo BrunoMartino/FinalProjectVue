@@ -1,0 +1,12 @@
+.product-item {
+  display: grid;
+  grid-template-columns: minmax(100px, 200px) 1fr;
+  @apply gap-5 mb-10 relative;
+}
+
+.product-item__img {
+  @apply rounded-md overflow-hidden h-24;
+}
+.product-item__info {
+  @apply self-end;
+}
