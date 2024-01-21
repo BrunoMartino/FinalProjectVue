@@ -1,89 +1,47 @@
 <template>
   <form class="user__form">
     <label for="name">Nome:</label>
-    <input type="text" id="name" name="name" v-model="name" />
+    <input type="text" id="name" name="name" v-model="user.name" />
     <label for="email">Email:</label>
-    <input type="email" id="email" name="email" v-model="email" />
+    <input type="email" id="email" name="email" v-model="user.email" />
     <label for="password">Senha:</label>
-    <input type="password" id="password" name="password" v-model="password" />
+    <input type="password" id="password" name="password" v-model="user.password" />
     <label for="cep">CEP:</label>
-    <input type="text" name="cep" id="cep" v-model="cep" @keyup="fillCEP" />
+    <input type="text" name="cep" id="cep" v-model="user.cep" @keyup="fillCEP" />
     <label for="street">Rua:</label>
-    <input type="text" name="street" id="street" v-model="street" />
+    <input type="text" name="street" id="street" v-model="user.street" />
     <label for="number">Número:</label>
-    <input type="number" name="number" id="number" v-model="number" />
+    <input type="number" name="number" id="number" v-model="user.number" />
     <label for="neighborhood">Bairro:</label>
-    <input type="text" name="neighborhood" id="neighborhood" v-model="neighborhood" />
+    <input type="text" name="neighborhood" id="neighborhood" v-model="user.neighborhood" />
     <label for="city">Cidade:</label>
-    <input type="text" name="city" id="city" v-model="city" />
+    <input type="text" name="city" id="city" v-model="user.city" />
     <label for="state">Estado:</label>
-    <input type="text" name="state" id="state" v-model="state" />
-    <div class="btn__create-user" @click.prevent="registerUser">
-      <slot></slot>
-    </div>
+    <input type="text" name="state" id="state" v-model="user.state" />
+
+    <slot></slot>
   </form>
 </template>
 
 <script setup>
-import { computed, ref } from 'vue'
-import { useStore } from '@/stores/index.js'
+import { computed } from 'vue'
 import { getCEP } from '@/services.js'
-import { useRouter } from 'vue-router'
+import { useStore } from '@/stores/index.js'
 
 const store = useStore()
-const router = useRouter()
 
-const name = ref('')
-const email = ref('')
-const password = ref('')
-const cep = ref('')
-const street = ref('')
-const number = ref('')
-const neighborhood = ref('')
-const city = ref('')
-const state = ref('')
-
-const user = computed(() => ({
-  name: name.value,
-  email: email.value,
-  password: password.value,
-  cep: cep.value,
-  street: street.value,
-  number: number.value,
-  neighborhood: neighborhood.value,
-  city: city.value,
-  state: state.value,
-  id: email.value
-}))
+const user = computed(() => store.user)
 
 const fillCEP = () => {
-  const cepValue = cep.value.replace(/\D/g, '')
+  const cepValue = user.value.cep.replace(/\D/g, '')
+  console.log(user.value.cep)
   if (cepValue.length === 8) {
     getCEP(cepValue).then((r) => {
-      console.log(r.data)
-      street.value = r.data.logradouro
-      neighborhood.value = r.data.bairro
-      city.value = r.data.localidade
-      state.value = r.data.uf
+      user.value.street = r.data.logradouro
+      user.value.neighborhood = r.data.bairro
+      user.value.city = r.data.localidade
+      user.value.state = r.data.uf
     })
-  }
-}
-
-const registerUser = async () => {
-  try {
-    await store.createUser(user.value)
-    console.log('User creation successful')
-
-    await store.updateUser(user.value)
-    console.log('User update successful')
-
-    await store.getUser(user.value.email)
-    console.log('User get succesful')
-
-    await router.push({ name: 'user' })
-    console.log('Enter user page succesful')
-  } catch (error) {
-    console.error('Error during user registration:', error)
   }
 }
 </script>

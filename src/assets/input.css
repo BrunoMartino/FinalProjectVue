@@ -64,3 +64,8 @@ textarea {
 .fade-leave-to {
   transform: translate3d(0, 20px 0);
 }
+/*style for delete-btn on UserProducts.vue*/
+
+.delete-btn {
+  @apply absolute top-0 right-0 bg-[url('./ranek-assets/remove.svg')] bg-center bg-no-repeat cursor-pointer indent-[-140px] w-6 h-6 overflow-hidden;
+}

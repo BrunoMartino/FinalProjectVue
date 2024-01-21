@@ -36,7 +36,8 @@ export const useStore = defineStore('user', {
       this.login = payload // pode alterar estado dos objetos na store direto com actions.
     },
     updateUser: function (payload) {
-      Object.assign(this.user, payload)
+      payload.id = payload.email
+      this.user = payload
     },
     getUser: function (payload) {
       return api.get(`/user/${payload}`).then((response) => {
@@ -64,5 +65,6 @@ export const useStore = defineStore('user', {
       })
       this.updateLogin(false)
     }
-  }
+  },
+  getters: {}
 })
