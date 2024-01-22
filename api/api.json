@@ -1,4 +1,50 @@
 {
+  "transaction": [
+    {
+      "buyer_id": "bruno_g_martins@outlook.com",
+      "seller_id": "bruno_g_martins@outlook.com",
+      "product": {
+        "id": "notebook",
+        "name": "Notebook",
+        "user_id": "bruno_g_martins@outlook.com",
+        "price": "4999",
+        "sold": "false",
+        "description": "Esse é um novo notebook",
+        "imgs": null
+      },
+      "address": {
+        "cep": "12345-678",
+        "street": "Rua Ali Perto",
+        "number": 25,
+        "neighborhood": "LARSEN",
+        "city": "Belo-Horizonte",
+        "state": "MG"
+      },
+      "id": 1
+    },
+    {
+      "buyer_id": "bruno-g-martins@outlook.com",
+      "seller_id": "bruno_g_martins@outlook.com",
+      "product": {
+        "id": "tablet",
+        "name": "Tablet",
+        "user_id": "bruno_g_martins@outlook.com",
+        "price": "1399",
+        "sold": "false",
+        "description": "Esse é um novo tablet.",
+        "imgs": null
+      },
+      "address": {
+        "cep": "31170-370",
+        "street": "Rua João das Chagas",
+        "number": 333,
+        "neighborhood": "União",
+        "city": "Belo Horizonte",
+        "state": "MG"
+      },
+      "id": 2
+    }
+  ],
   "user": [
     {
       "id": "bruno_g_martins@outlook.com",
@@ -34,11 +80,11 @@
       "id": "gattus@patatinhacurta.com"
     },
     {
-      "id": "bruno.g.martins@hotmail.com",
-      "name": "Bruno",
-      "email": "bruno.g.martins@hotmail.com",
+      "id": "bruno-g-martins@outlook.com",
+      "name": "Bruno Teste",
+      "email": "bruno-g-martins@outlook.com",
       "password": "123",
-      "cep": "31170370",
+      "cep": "31170-370",
       "street": "Rua João das Chagas",
       "number": 333,
       "neighborhood": "União",

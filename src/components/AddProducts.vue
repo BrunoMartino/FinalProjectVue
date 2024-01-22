@@ -27,7 +27,8 @@ const product = {
   name: '',
   price: '',
   description: '',
-  imgs: null
+  imgs: null,
+  sold: 'false'
 }
 
 const formatProducts = () => {

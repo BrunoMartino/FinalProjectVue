@@ -1,11 +1,13 @@
 <template>
   <form class="user__form">
-    <label for="name">Nome:</label>
-    <input type="text" id="name" name="name" v-model="user.name" />
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" v-model="user.email" />
-    <label for="password">Senha:</label>
-    <input type="password" id="password" name="password" v-model="user.password" />
+    <div class="form__div" v-if="showDataLogin">
+      <label for="name">Nome:</label>
+      <input type="text" id="name" name="name" v-model="user.name" />
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" v-model="user.email" />
+      <label for="password">Senha:</label>
+      <input type="password" id="password" name="password" v-model="user.password" />
+    </div>
     <label for="cep">CEP:</label>
     <input type="text" name="cep" id="cep" v-model="user.cep" @keyup="fillCEP" />
     <label for="street">Rua:</label>
@@ -27,10 +29,16 @@
 import { computed } from 'vue'
 import { getCEP } from '@/services.js'
 import { useStore } from '@/stores/index.js'
+import { useRoute } from 'vue-router'
 
 const store = useStore()
+const route = useRoute()
 
 const user = computed(() => store.user)
+
+const showDataLogin = computed(() => {
+  return !store.login || route.name === 'user-edit'
+})
 
 const fillCEP = () => {
   const cepValue = user.value.cep.replace(/\D/g, '')

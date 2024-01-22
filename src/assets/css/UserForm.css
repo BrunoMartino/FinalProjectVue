@@ -1,4 +1,5 @@
-.user__form {
+.user__form,
+.form__div {
   display: grid;
   grid-template-columns: 80px 1fr;
   @apply items-center;
@@ -6,7 +7,12 @@
 .user__form label {
   @apply text-sm uppercase font-bold;
 }
-.btn__create-user {
+
+.form__div {
+  grid-column: 1/3;
+}
+
+.btn__user-form {
   grid-column: 2;
   @apply mt-2 max-w-full;
 }

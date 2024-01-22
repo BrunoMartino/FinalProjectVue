@@ -1,7 +1,7 @@
 <template>
   <div>
     <UserForm :storedUser="store.user">
-      <button class="btn btn__create-user" @click.prevent="UpdateUser">Atualizar Usuário</button>
+      <button class="btn btn__user-form" @click.prevent="UpdateUser">Atualizar Usuário</button>
     </UserForm>
   </div>
 </template>

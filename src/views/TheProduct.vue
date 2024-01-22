@@ -10,7 +10,9 @@
         <h1 class="product__title">{{ product.name }}</h1>
         <p class="product__price">{{ toCurrency(product.price) }}</p>
         <p class="product__description">{{ product.description }}</p>
-        <button class="btn buy-btn" v-if="product.sold === 'false'">Comprar</button>
+        <button class="btn buy-btn" v-if="!finish" @click="finish = true">Comprar</button>
+        <FinalizePurchase v-else-if="product.sold === 'false'" :product="product" />
+
         <button class="btn buy-btn" v-else disabled></button>
       </div>
     </div>
@@ -20,6 +22,7 @@
 
 <script setup>
 import LoadingPage from '@/components/LoadingPage.vue'
+import FinalizePurchase from '@/components/FinalizePurchase.vue'
 import { toCurrency } from '@/helpers'
 import { api } from '@/services.js'
 import { onMounted, ref } from 'vue'
@@ -29,6 +32,8 @@ const product = ref('') //usar .data para acessar os valores
 // eslint-disable-next-line no-unused-vars
 const props = defineProps(['id'])
 const route = useRoute()
+
+let finish = ref(false)
 
 const getProduct = () => {
   api.get(`/product/${route.params.id}`).then((r) => {
